@@ -23,9 +23,9 @@ export default defineConfig({
           md: { value: "768px" },
           lg: { value: "1024px" },
           xl: { value: "1280px" },
-          "2xl": {value: "1920px" },
-        }
-      }
+          "2xl": { value: "1920px" },
+        },
+      },
     },
   },
 
