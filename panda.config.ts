@@ -16,9 +16,21 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        sizes: {
+          sm: { value: "320px" },
+          md: { value: "768px" },
+          lg: { value: "1024px" },
+          xl: { value: "1280px" },
+          "2xl": {value: "1920px" },
+        }
+      }
+    },
   },
 
   // The output directory for your css system
   outdir: "styled-system",
+
+  jsxFramework: "react",
 });
