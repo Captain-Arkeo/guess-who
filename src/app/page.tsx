@@ -1,5 +1,6 @@
-import { Footer, Header, MainPage } from "@/src/containers";
+import { Footer } from "@/src/containers";
 import { css } from "@/styled-system/css";
+import { Card } from "../components";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       <MainPage />
       <Footer />
     </>*/
-    <div className={css({ fontSize: '2xl', fontWeight: 'bold' })}>Hello 🐼!</div>
+    <>
+    <div className={css({ fontSize: '720px', fontWeight: 'bold', color: "red.500" })}>Hello 🐼!</div>
+    </>
   );
 }
