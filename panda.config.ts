@@ -6,9 +6,9 @@ export default defineConfig({
 
   // Where to look for your css declarations
   include: [
-    "./src/app/**/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
-    "./src/containers/**/*.{js,jsx,ts,tsx}",
+    './src/app/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/containers/**/*.{js,jsx,ts,tsx}',
   ],
 
   // Files to exclude
@@ -17,15 +17,7 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
-      tokens: {
-        sizes: {
-          sm: { value: "320px" },
-          md: { value: "768px" },
-          lg: { value: "1024px" },
-          xl: { value: "1280px" },
-          "2xl": { value: "1920px" },
-        },
-      },
+      
     },
   },
 
