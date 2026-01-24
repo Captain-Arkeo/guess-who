@@ -24,6 +24,14 @@ export default defineConfig({
         xl: "1280px",
         "2xl": "1920px",
       },
+      tokens: {
+        colors: {
+          player1: { value: "#DC2626" },
+          player2: { value: "#1D4ED8" },
+          player3: { value: "#16A34A" },
+          player4: { value: "#F59E0B" },
+        },
+      },
     },
   },
 
