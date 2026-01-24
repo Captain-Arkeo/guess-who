@@ -6,9 +6,9 @@ export default defineConfig({
 
   // Where to look for your css declarations
   include: [
-    './src/app/**/*.{js,jsx,ts,tsx}',
-    './src/components/**/*.{js,jsx,ts,tsx}',
-    './src/containers/**/*.{js,jsx,ts,tsx}',
+    "./src/app/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/containers/**/*.{js,jsx,ts,tsx}",
   ],
 
   // Files to exclude
@@ -17,7 +17,13 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
-      
+      breakpoints: {
+        sm: "320px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1920px",
+      },
     },
   },
 
