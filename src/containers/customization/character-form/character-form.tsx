@@ -14,12 +14,16 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
   const [charImg, setCharImg] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    //Don't reload the page
     e.preventDefault();
 
+    //If no character has been inputted, it mustn't cause any change 
     const emptyStrings: boolean = charImg == "" && charName == "";
 
     if (onFormSubmit && !emptyStrings) {
       onFormSubmit(charName, charImg);
+
+      //Reset user input so adding the next one is easier, and to prevent double click mishaps
       setCharImg("");
       setCharName("");
     }
