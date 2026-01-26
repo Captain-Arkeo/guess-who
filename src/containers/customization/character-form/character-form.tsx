@@ -1,5 +1,5 @@
 "use client";
-import { Form, TextInput } from "@/src/components";
+import { TextInput } from "@/src/components";
 import { useState } from "react";
 import {
   CharacterFormStyled,
