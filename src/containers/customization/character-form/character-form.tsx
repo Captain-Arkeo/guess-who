@@ -1,7 +1,10 @@
 "use client";
 import { Form, TextInput } from "@/src/components";
 import { useState } from "react";
-import { CharacterFormStyled, CharacterFormWrapperStyled, TitleStyled } from "./character-form-style";
+import {
+  CharacterFormStyled,
+  CharacterFormWrapperStyled,
+} from "./character-form-style";
 
 export type CharacterFormProps = {
   onFormSubmit?: (arg1: string, arg2: string) => void;
@@ -17,7 +20,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
     //Don't reload the page
     e.preventDefault();
 
-    //If no character has been inputted, it mustn't cause any change 
+    //If no character has been inputted, it mustn't cause any change
     const emptyStrings: boolean = charImg == "" && charName == "";
 
     if (onFormSubmit && !emptyStrings) {
@@ -30,8 +33,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
   }
 
   return (
-    <CharacterFormWrapperStyled>
-      <TitleStyled>ADD BY HAND</TitleStyled>
+    <CharacterFormWrapperStyled title="ADD BY HAND">
       <CharacterFormStyled onSubmit={(e) => handleSubmit(e)}>
         <TextInput
           label="Character Name"
