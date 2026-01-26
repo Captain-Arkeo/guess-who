@@ -5,9 +5,10 @@ import {
   CharacterFormStyled,
   CharacterFormWrapperStyled,
 } from "./character-form-style";
+import { CharacterWithNoId } from "@/src/types";
 
 export type CharacterFormProps = {
-  onFormSubmit?: (arg1: string, arg2: string) => void;
+  onFormSubmit?: (characters: CharacterWithNoId[]) => void;
 };
 
 export const CharacterForm: React.FC<CharacterFormProps> = ({
@@ -24,7 +25,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
     const emptyStrings: boolean = charImg == "" && charName == "";
 
     if (onFormSubmit && !emptyStrings) {
-      onFormSubmit(charName, charImg);
+      onFormSubmit([{name: charName, imageUrl: charImg}]);
 
       //Reset user input so adding the next one is easier, and to prevent double click mishaps
       setCharImg("");
