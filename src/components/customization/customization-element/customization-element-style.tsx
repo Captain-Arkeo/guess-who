@@ -10,6 +10,7 @@ export const CustomizationElementStyled = styled("div", {
     borderStyle: "solid",
     paddingTop: "20px",
     paddingBottom: "30px",
+    textAlign: "center",
   },
 });
 
