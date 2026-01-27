@@ -2,7 +2,7 @@
 import { Board } from "@/src/components";
 import { Character, Players } from "@/src/types";
 import { useEffect, useState } from "react";
-import { CharacterForm } from "../../customization";
+import { CharacterForm, CharacterListForm } from "../../customization";
 import { CustomizationSectionStyled, MainPageStyled } from "./main-page-style";
 import { useBoard } from "@/src/hooks";
 
@@ -22,6 +22,7 @@ export const MainPage: React.FC = () => {
   return (
     <MainPageStyled>
       <CustomizationSectionStyled>
+        <CharacterListForm characters={characters}></CharacterListForm>
         <CharacterForm onFormSubmit={addNewCharacters} />
       </CustomizationSectionStyled>
 
