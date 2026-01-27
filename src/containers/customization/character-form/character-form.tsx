@@ -17,7 +17,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
   const [charName, setCharName] = useState("");
   const [charImg, setCharImg] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) : void {
     //Don't reload the page
     e.preventDefault();
 
@@ -25,7 +25,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
     const emptyStrings: boolean = charImg == "" && charName == "";
 
     if (onFormSubmit && !emptyStrings) {
-      onFormSubmit([{name: charName, imageUrl: charImg}]);
+      onFormSubmit([{name: charName != "" ? charName : undefined, imageUrl: charImg != "" ? charImg : undefined}]);
 
       //Reset user input so adding the next one is easier, and to prevent double click mishaps
       setCharImg("");
@@ -38,11 +38,13 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
       <CharacterFormStyled onSubmit={(e) => handleSubmit(e)}>
         <TextInput
           label="Character Name"
+          isTextArea={false}
           value={charName}
           onChange={(e) => setCharName(e.target.value)}
         />
         <TextInput
           label="Character Image (URL)"
+          isTextArea={false}
           value={charImg}
           onChange={(e) => setCharImg(e.target.value)}
         />
