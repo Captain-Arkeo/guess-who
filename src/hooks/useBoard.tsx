@@ -48,20 +48,29 @@ export function useBoard(nbRows: number, nbColumns: number): UseBoardReturn {
         ) {
           return previousCharacter;
         } else {
-          const newCharacter = newCharacters[newCharacters.length - charactersToAdd];
+          const newCharacter: CharacterWithNoId =
+            newCharacters[newCharacters.length - charactersToAdd];
+
+          //Empty strings should not be added to either the name or the imageUrl
+          const safeNewCharacter: CharacterWithNoId = {
+            name: newCharacter.name != "" ? newCharacter.name : undefined,
+            imageUrl:
+              newCharacter.imageUrl != "" ? newCharacter.imageUrl : undefined,
+          };
+
           charactersToAdd--;
           //An extra check to make sure an empty character (such as one created by a double click) is never added
           if (
-            (!newCharacter.name && !newCharacter.imageUrl) ||
-            (newCharacter.name == "" && newCharacter.imageUrl == "")
+            (!safeNewCharacter.name && !safeNewCharacter.imageUrl) ||
+            (safeNewCharacter.name == "" && safeNewCharacter.imageUrl == "")
           ) {
             return previousCharacter;
           } else {
             charactersAdded++;
             return {
               id: previousCharacter.id, //We must keep the same id in order to keep the same key when rerendered
-              name: newCharacter.name,
-              imageUrl: newCharacter.imageUrl,
+              name: safeNewCharacter.name,
+              imageUrl: safeNewCharacter.imageUrl,
             };
           }
         }
