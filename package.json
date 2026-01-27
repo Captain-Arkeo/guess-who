@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
-    "dev": "rm -rf .next && next dev",
-    "build": "next build",
+    "dev": "next dev",
+    "dev:clear": "rm -rf .next && next dev",
+    "build": "panda && next build",
     "start": "next start",
     "lint": "eslint"
   },
