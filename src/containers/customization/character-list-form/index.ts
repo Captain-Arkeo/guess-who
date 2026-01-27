@@ -1,2 +1,1 @@
-export * from "./character-form";
 export * from "./character-list-form";
