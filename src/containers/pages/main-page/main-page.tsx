@@ -22,7 +22,7 @@ export const MainPage: React.FC = () => {
   return (
     <MainPageStyled>
       <CustomizationSectionStyled>
-        <CharacterListForm characters={characters}></CharacterListForm>
+        <CharacterListForm characters={characters} onFormSubmit={addNewCharacters}></CharacterListForm>
         <CharacterForm onFormSubmit={addNewCharacters} />
       </CustomizationSectionStyled>
 
