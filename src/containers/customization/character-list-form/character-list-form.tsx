@@ -7,16 +7,16 @@ import {
   CharacterListFormWrapperStyled,
 } from "./character-list-form-style";
 import { TextInput } from "@/src/components";
-import { copyToClipboard, generateCharacterPreset } from "@/src/utils";
+import { copyToClipboard, generateCharacterPreset, isCharacterWithNoIdArray } from "@/src/utils";
 import { Character, CharacterWithNoId } from "@/src/types";
 
 export type CharacterListFormProps = {
     characters: Character[];
-    onFormSubmit?: (characters: CharacterWithNoId[]) => void;
+    onFormSubmit: (characters: CharacterWithNoId[]) => void;
 }
 
 //The form used to upload and download character presets
-export const CharacterListForm: React.FC<CharacterListFormProps> = ({ characters }) => {
+export const CharacterListForm: React.FC<CharacterListFormProps> = ({ characters, onFormSubmit }) => {
   const [characterPreset, setCharacterPreset] = useState<string>("");
 
   async function handleCopy() : Promise<void> {
@@ -31,9 +31,20 @@ export const CharacterListForm: React.FC<CharacterListFormProps> = ({ characters
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) : void {
     //Don't reload the page
     e.preventDefault();
+
+    let parsedValue : any;
     
-    //Add JSON.parse() logic here, while checking the type of the parsed value, before having onFormSubmit on that value
-    //const parsedCharacterPreset : CharacterWithNoId[] | any = JSON.parse(characterPreset);
+    try {
+      parsedValue = JSON.parse(characterPreset);
+      if(!isCharacterWithNoIdArray(parsedValue)){
+        window.alert("This value does not contain a character preset.")
+      } else {
+        onFormSubmit(parsedValue);
+      }
+    } catch {
+      window.alert("This value is not a valid element.")
+    }
+
     setCharacterPreset("");
   }
 
@@ -52,7 +63,7 @@ export const CharacterListForm: React.FC<CharacterListFormProps> = ({ characters
           onChange={(e) => setCharacterPreset(e.target.value)}
         />
         <ButtonDivStyled>
-            {/*<button type="submit">Submit</button>*/}
+            <button type="submit">Submit</button>
             <button type="button" onClick={() => handleGenerate(characters)}>Generate List</button>
             <button type="button" onClick={handleCopy}>Copy List</button>
         </ButtonDivStyled>
