@@ -2,13 +2,17 @@ import { ChangeEvent, useId } from "react";
 import {
   InputStyled,
   LabelStyled,
+  TextAreaInputStyled,
   TextInputWrapperStyled,
 } from "./text-input-style";
 
 export type TextInputProps = {
   label: string;
   value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  isTextArea: boolean;
+  onChange?: (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) => void;
   className?: string;
 };
 
@@ -16,6 +20,7 @@ export type TextInputProps = {
 export const TextInput: React.FC<TextInputProps> = ({
   label,
   value,
+  isTextArea,
   onChange,
   className,
 }) => {
@@ -23,7 +28,11 @@ export const TextInput: React.FC<TextInputProps> = ({
   return (
     <TextInputWrapperStyled className={className}>
       <LabelStyled htmlFor={inputId}>{label}</LabelStyled>
-      <InputStyled id={inputId} value={value} onChange={onChange}></InputStyled>
+      {isTextArea ? (
+        <TextAreaInputStyled id={inputId} value={value} onChange={onChange} />
+      ) : (
+        <InputStyled id={inputId} value={value} onChange={onChange} />
+      )}
     </TextInputWrapperStyled>
   );
 };

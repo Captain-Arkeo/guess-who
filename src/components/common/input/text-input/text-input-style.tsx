@@ -15,3 +15,7 @@ export const LabelStyled = styled("label", {
 export const InputStyled = styled("input", {
   base: {},
 });
+
+export const TextAreaInputStyled = styled("textarea", {
+  base: {},
+})
