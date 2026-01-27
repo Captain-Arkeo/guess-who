@@ -22,10 +22,10 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
     e.preventDefault();
 
     //If no character has been inputted, it mustn't cause any change
-    const emptyStrings: boolean = charImg == "" && charName == "";
+    const emptyStrings: boolean = charImg === "" && charName === "";
 
     if (onFormSubmit && !emptyStrings) {
-      onFormSubmit([{name: charName != "" ? charName : undefined, imageUrl: charImg != "" ? charImg : undefined}]);
+      onFormSubmit([{name: charName !== "" ? charName : undefined, imageUrl: charImg !== "" ? charImg : undefined}]);
 
       //Reset user input so adding the next one is easier, and to prevent double click mishaps
       setCharImg("");

@@ -27,7 +27,7 @@ export const Board: React.FC<BoardProps> = ({
   function handleCardClick(flipIndex: number) {
     const updatedFlippedCards: boolean[] = flippedCards.slice();
     updatedFlippedCards.map((isFlipped, index) => {
-      if (flipIndex == index) {
+      if (flipIndex === index) {
         updatedFlippedCards[index] = !isFlipped;
       }
     });
