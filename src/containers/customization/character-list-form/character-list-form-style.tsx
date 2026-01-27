@@ -17,5 +17,8 @@ export const CharacterListFormStyled = styled(Form, {
 });
 
 export const ButtonDivStyled = styled("div", {
-  base: {},
+  base: {
+    display: "flex",
+    gap: "5px",
+  },
 });
