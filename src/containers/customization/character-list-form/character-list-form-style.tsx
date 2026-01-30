@@ -2,15 +2,16 @@ import { CustomizationElement, Form } from "@/src/components";
 import { styled } from "@/styled-system/jsx";
 
 export const CharacterListFormWrapperStyled = styled(CustomizationElement, {
-  base: {
-    width: "20%",
-    height: "100%",
-  },
+  base: {},
 });
 
 export const CharacterListFormTextStyled = styled("p", {
-    base: {},
-})
+  base: {
+    marginLeft: "5px",
+    marginRight: "5px",
+    textAlign: "center",
+  },
+});
 
 export const CharacterListFormStyled = styled(Form, {
   base: {},

@@ -3,16 +3,24 @@ import { styled } from "@/styled-system/jsx";
 export const CardStyled = styled("div", {
   base: {
     display: "flex",
-    height: "190px",
-    width: "150px",
-    borderColor: "black",
-    borderRadius: "20px",
-    borderWidth: "2px",
-    borderStyle: "solid",
     position: "relative",
     overflow: "hidden",
 
+    borderColor: "black",
+    borderWidth: "2px",
+    borderStyle: "solid",
+    borderRadius: "15px",
+
+    height: "152px",
+    width: "120px",
+
     alignItems: "flex-end",
+
+    md: {
+      borderRadius: "20px",
+      height: "190px",
+      width: "150px",
+    },
   },
   variants: {
     flipped: {
@@ -73,7 +81,11 @@ export const NameStyled = styled("span", {
     zIndex: "1",
 
     fontSize: "18px",
-    marginBottom: "23px",
+    marginBottom: "12px",
+
+    md: {
+      marginBottom: "23px",
+    },
   },
   variants: {
     player: {
@@ -96,6 +108,10 @@ export const NameStyled = styled("span", {
       true: {
         fontSize: "128px",
         marginBottom: "0px",
+
+        md: {
+          marginBottom: "0px",
+        },
       },
     },
   },

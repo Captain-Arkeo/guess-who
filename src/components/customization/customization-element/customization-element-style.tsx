@@ -8,9 +8,32 @@ export const CustomizationElementStyled = styled("div", {
     borderColor: "black",
     borderWidth: "1px",
     borderStyle: "solid",
-    paddingTop: "20px",
-    paddingBottom: "30px",
     textAlign: "center",
+
+    width: "100%",
+
+    paddingTop: "20px",
+    paddingBottom: "15px",
+
+    md: {
+      width: "20%",
+      height: "100%",
+
+      paddingTop: "20px",
+      paddingBottom: "30px",
+    },
+  },
+
+  variants: {
+    stackedUnderOtherElement: {
+      true: {
+        borderTopStyle: "none",
+
+        md: {
+          borderTopStyle: "solid",
+        },
+      },
+    },
   },
 });
 
@@ -19,6 +42,10 @@ export const TitleStyled = styled("h2", {
     all: "unset",
     fontWeight: "bold",
     fontSize: "24px",
-    marginBottom: "30px",
+    marginBottom: "10px",
+
+    md: {
+      marginBottom: "20px",
+    },
   },
 });
