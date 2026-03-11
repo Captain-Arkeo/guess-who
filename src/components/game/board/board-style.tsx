@@ -7,7 +7,7 @@ export const BoardStyled = styled("div", {
     gap: "5px",
     alignItems: "flex-start",
 
-    mdDown: {
+    xlDown: {
       overflow: "scroll",
       //It is interesting to discover that the scrollbar is customizable
 
@@ -15,7 +15,7 @@ export const BoardStyled = styled("div", {
       scrollbarWidth: "md",
     },
 
-    md: {
+    xl: {
       gap: "10px",
       alignItems: "center",
     },
@@ -27,10 +27,12 @@ export const CardLineStyled = styled("div", {
     display: "flex",
     gap: "5px",
 
-    mdDown: {},
+    xlDown: {
+      marginInline: "auto",  //If there is enough space to not need a scroll, the element is centered instead.
+    },
 
-    md: {
-      maxWidth: "80%",
+    xl: {
+      maxWidth: "92%",
       gap: "10px",
     },
   },

@@ -16,7 +16,7 @@ export const CardStyled = styled("div", {
 
     alignItems: "flex-end",
 
-    md: {
+    xl: {
       borderRadius: "20px",
       height: "190px",
       width: "150px",
@@ -83,7 +83,7 @@ export const NameStyled = styled("span", {
     fontSize: "18px",
     marginBottom: "12px",
 
-    md: {
+    xl: {
       marginBottom: "23px",
     },
   },
@@ -109,7 +109,7 @@ export const NameStyled = styled("span", {
         fontSize: "128px",
         marginBottom: "0px",
 
-        md: {
+        xl: {
           marginBottom: "0px",
         },
       },
