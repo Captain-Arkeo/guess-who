@@ -9,6 +9,10 @@ export const BoardStyled = styled("div", {
 
     mdDown: {
       overflow: "scroll",
+      //It is interesting to discover that the scrollbar is customizable
+
+      //scrollbarColor: "blue red",
+      scrollbarWidth: "md",
     },
 
     md: {
@@ -23,9 +27,7 @@ export const CardLineStyled = styled("div", {
     display: "flex",
     gap: "5px",
 
-    mdDown: {
-      marginInline: "auto", //This is to keep the element centered when it fits, while still allowing it to start on the left if it needs scrolling
-    },
+    mdDown: {},
 
     md: {
       maxWidth: "80%",
