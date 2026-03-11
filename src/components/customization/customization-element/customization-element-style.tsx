@@ -15,7 +15,7 @@ export const CustomizationElementStyled = styled("div", {
     paddingTop: "20px",
     paddingBottom: "15px",
 
-    md: {
+    lg: {
       width: "20%",
       height: "100%",
 
@@ -29,7 +29,7 @@ export const CustomizationElementStyled = styled("div", {
       true: {
         borderTopStyle: "none",
 
-        md: {
+        lg: {
           borderTopStyle: "solid",
         },
       },
@@ -44,7 +44,7 @@ export const TitleStyled = styled("h2", {
     fontSize: "24px",
     marginBottom: "10px",
 
-    md: {
+    lg: {
       marginBottom: "20px",
     },
   },

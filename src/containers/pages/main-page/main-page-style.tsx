@@ -10,7 +10,7 @@ export const CustomizationSectionStyled = styled("div", {
     flexDirection: "column",
     marginBottom: "30px",
 
-    md: {
+    lg: {
       flexDirection: "row",
       justifyContent: "space-around",
       marginBottom: "50px",
