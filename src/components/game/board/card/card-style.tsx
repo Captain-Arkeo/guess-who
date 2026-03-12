@@ -27,8 +27,14 @@ export const CardStyled = styled("div", {
       true: {
         alignItems: "center",
         justifyContent: "center",
+        bgColor: "var(--bg-color)",
       },
     },
+  },
+
+    /*
+    //This used to be my old implementation of player colors before using style and var()
+    //However, since it helped me understand compound variants, I wanted to keep it commented so that I can remember them if needed later
 
     //Only there to prepare the compound variants
     player: {
@@ -37,9 +43,8 @@ export const CardStyled = styled("div", {
       3: {},
       4: {},
     },
-  },
 
-  /*Making sure colors are consistent with player choice*/
+  //Making sure colors are consistent with player choice
   compoundVariants: [
     {
       flipped: true,
@@ -69,7 +74,7 @@ export const CardStyled = styled("div", {
         bgColor: "player4",
       },
     },
-  ],
+  ],*/
 });
 
 export const NameStyled = styled("span", {
@@ -80,6 +85,8 @@ export const NameStyled = styled("span", {
     color: "white",
     zIndex: "1",
 
+    bgColor: "var(--bg-color)",
+
     fontSize: "18px",
     marginBottom: "12px",
 
@@ -88,21 +95,6 @@ export const NameStyled = styled("span", {
     },
   },
   variants: {
-    player: {
-      1: {
-        bgColor: "player1",
-      },
-      2: {
-        bgColor: "player2",
-      },
-      3: {
-        bgColor: "player3",
-      },
-      4: {
-        bgColor: "player4",
-      },
-    },
-
     //When flipped, the text becomes "?"
     flipped: {
       true: {

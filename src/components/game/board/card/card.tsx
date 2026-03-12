@@ -24,12 +24,12 @@ export const Card: React.FC<CardProps> = ({
       flipped, we see the back of the card instead, hiding the character*/}
 
       {flipped ? (
-        <CardStyled className={className} player={player} flipped={true} onClick={onClick}>
-          <NameStyled flipped={true}>?</NameStyled>
+        <CardStyled className={className} flipped={true} onClick={onClick} style={{ "--bg-color": player} as React.CSSProperties}>
+          <NameStyled flipped={true} style={{ "--bg-color": player} as React.CSSProperties}>?</NameStyled>
         </CardStyled>
       ) : (
-        <CardStyled className={className} onClick={onClick}>
-          {name ? <NameStyled player={player}>{name}</NameStyled> : <></>}
+        <CardStyled className={className} onClick={onClick} style={{ "--bg-color": player} as React.CSSProperties}>
+          {name ? <NameStyled style={{ "--bg-color": player} as React.CSSProperties}>{name}</NameStyled> : <></>}
           {imageUrl ? (
             <CardImageStyled
               src={imageUrl}
