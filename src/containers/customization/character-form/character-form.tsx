@@ -1,5 +1,5 @@
 "use client";
-import { TextInput } from "@/src/components";
+import { Button, TextInput } from "@/src/components";
 import { useState } from "react";
 import {
   CharacterFormStyled,
@@ -53,7 +53,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
           value={charImg}
           onChange={(e) => setCharImg(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <Button type="submit" label="Submit" />
       </CharacterFormStyled>
     </CharacterFormWrapperStyled>
   );

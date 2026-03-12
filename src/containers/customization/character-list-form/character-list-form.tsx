@@ -6,7 +6,7 @@ import {
   CharacterListFormTextStyled,
   CharacterListFormWrapperStyled,
 } from "./character-list-form-style";
-import { TextInput } from "@/src/components";
+import { Button, TextInput } from "@/src/components";
 import { copyToClipboard, generateCharacterPreset, isCharacterWithNoIdArray } from "@/src/utils";
 import { Character, CharacterWithNoId } from "@/src/types";
 
@@ -63,9 +63,9 @@ export const CharacterListForm: React.FC<CharacterListFormProps> = ({ characters
           onChange={(e) => setCharacterPreset(e.target.value)}
         />
         <ButtonDivStyled>
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => handleGenerate(characters)}>Generate List</button>
-            <button type="button" onClick={handleCopy}>Copy List</button>
+            <Button type="submit" label="Submit" />
+            <Button type="button" label="Generate List" onClick={() => handleGenerate(characters)} />
+            <Button type="button" label="Copy List" onClick={handleCopy} />
         </ButtonDivStyled>
       </CharacterListFormStyled>
     </CharacterListFormWrapperStyled>
