@@ -6,5 +6,6 @@ export const FormStyled = styled("form", {
     flexDirection: "column",
     alignItems: "center",
     gap: "20px",
+    width: "80%",
   },
 });
