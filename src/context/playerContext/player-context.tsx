@@ -1,3 +1,4 @@
+import { DEFAULT_PLAYER } from "@/src/constants";
 import { Players } from "@/src/types";
 import { createContext } from "react";
 
@@ -6,4 +7,11 @@ type PlayerContextType = {
   setPlayer: React.Dispatch<React.SetStateAction<Players>>;
 };
 
-export const PlayerContext = createContext<PlayerContextType | null>(null);
+const defaultPlayerContextValue: PlayerContextType = {
+  player: DEFAULT_PLAYER,
+  setPlayer: () => {},
+};
+
+export const PlayerContext = createContext<PlayerContextType>(
+  defaultPlayerContextValue,
+);
