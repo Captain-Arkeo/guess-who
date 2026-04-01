@@ -4,7 +4,8 @@ export const PlayerChoicesStyled = styled("div", {
   base: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    gap: "10px",
     width: "80%",
   },
 });

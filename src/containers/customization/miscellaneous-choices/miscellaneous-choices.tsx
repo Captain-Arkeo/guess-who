@@ -12,7 +12,7 @@ export const MiscellaneousChoices: React.FC<
     const sizeContext = useContext(SizeContext);
     const playerContext = useContext(PlayerContext);
   return (
-    <MiscellaneousChoicesWrapperStyled title="Others">
+    <MiscellaneousChoicesWrapperStyled title="Others" stackedUnderOtherElement={true}>
       <PlayerChoices currentPlayer={playerContext.player} onChoice={playerContext.setPlayer}/>
       <RangeInput
         min={MIN_ROWS}
