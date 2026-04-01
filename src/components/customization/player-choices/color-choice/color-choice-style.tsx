@@ -1,11 +1,8 @@
 import { styled } from "@/styled-system/jsx";
 
 export const ColorChoiceStyled = styled("div", {
-<<<<<<< HEAD
 
   //In case we add more colors (I'd like purple for example), a grid layout should be thought of. For now, it is unnecessary
-=======
->>>>>>> b10661d (feature: component to choose players/colors created (needs to be styled correctly))
   base: {
     transition: "ease-in-out 0.25s",
     bgColor: "var(--bg-color)",
@@ -13,7 +10,6 @@ export const ColorChoiceStyled = styled("div", {
     borderStyle: "solid",
     borderWidth: "1px",
     height: "50px",
-<<<<<<< HEAD
     aspectRatio: "1 / 1",
 
     lg: {
@@ -21,9 +17,6 @@ export const ColorChoiceStyled = styled("div", {
       width: "20%",
       maxWidth: "50px",
     },
-=======
-    width: "50px",
->>>>>>> b10661d (feature: component to choose players/colors created (needs to be styled correctly))
 
     _hover: {
       opacity: "0.5",
