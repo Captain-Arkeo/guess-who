@@ -7,7 +7,13 @@ export const MainPageStyled = styled("div", {
 export const CustomizationSectionStyled = styled("div", {
   base: {
     display: "flex",
-    justifyContent: "space-around",
-    marginBottom: "50px",
+    flexDirection: "column",
+    marginBottom: "30px",
+
+    lg: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      marginBottom: "50px",
+    },
   },
 });

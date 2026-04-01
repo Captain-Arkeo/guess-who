@@ -9,21 +9,23 @@ export type UseBoardReturn = {
 };
 
 export function useBoard(nbRows: number, nbColumns: number): UseBoardReturn {
-  const [nbEmptyCards, setNbEmptyCards] = useState(nbRows * nbColumns);
+  const totalCards : number = nbRows * nbColumns;
+  const [nbEmptyCards, setNbEmptyCards] = useState(totalCards);
 
   //Future characters have an id that is generated here.
   //These id are used for keys when the characters are rendered
   const [characters, setCharacters] = useState<Character[]>(
-    Array.from({ length: nbEmptyCards }, () => ({
+    Array.from({ length: totalCards }, () => ({
       id: crypto.randomUUID(),
     })),
   );
 
   //Function to call whenever the board is to be reset : empties the entire board and resets the number of empty cards
   function resetBoard(): void {
-    setNbEmptyCards(nbRows * nbColumns);
+    const total = nbRows * nbColumns;
+    setNbEmptyCards(total);
     setCharacters(
-      Array.from({ length: nbEmptyCards }, () => ({
+      Array.from({ length: total }, () => ({
         id: crypto.randomUUID(),
       })),
     );

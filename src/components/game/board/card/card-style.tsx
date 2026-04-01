@@ -3,24 +3,38 @@ import { styled } from "@/styled-system/jsx";
 export const CardStyled = styled("div", {
   base: {
     display: "flex",
-    height: "190px",
-    width: "150px",
-    borderColor: "black",
-    borderRadius: "20px",
-    borderWidth: "2px",
-    borderStyle: "solid",
     position: "relative",
     overflow: "hidden",
 
+    borderColor: "black",
+    borderWidth: "2px",
+    borderStyle: "solid",
+    borderRadius: "15px",
+
+    height: "152px",
+    width: "120px",
+
     alignItems: "flex-end",
+
+    xl: {
+      borderRadius: "20px",
+      height: "190px",
+      width: "150px",
+    },
   },
   variants: {
     flipped: {
       true: {
         alignItems: "center",
         justifyContent: "center",
+        bgColor: "var(--bg-color)",
       },
     },
+  },
+
+    /*
+    //This used to be my old implementation of player colors before using style and var()
+    //However, since it helped me understand compound variants, I wanted to keep it commented so that I can remember them if needed later
 
     //Only there to prepare the compound variants
     player: {
@@ -29,9 +43,8 @@ export const CardStyled = styled("div", {
       3: {},
       4: {},
     },
-  },
 
-  /*Making sure colors are consistent with player choice*/
+  //Making sure colors are consistent with player choice
   compoundVariants: [
     {
       flipped: true,
@@ -61,7 +74,7 @@ export const CardStyled = styled("div", {
         bgColor: "player4",
       },
     },
-  ],
+  ],*/
 });
 
 export const NameStyled = styled("span", {
@@ -72,30 +85,25 @@ export const NameStyled = styled("span", {
     color: "white",
     zIndex: "1",
 
+    bgColor: "var(--bg-color)",
+
     fontSize: "18px",
-    marginBottom: "23px",
+    marginBottom: "12px",
+
+    xl: {
+      marginBottom: "23px",
+    },
   },
   variants: {
-    player: {
-      1: {
-        bgColor: "player1",
-      },
-      2: {
-        bgColor: "player2",
-      },
-      3: {
-        bgColor: "player3",
-      },
-      4: {
-        bgColor: "player4",
-      },
-    },
-
     //When flipped, the text becomes "?"
     flipped: {
       true: {
         fontSize: "128px",
         marginBottom: "0px",
+
+        xl: {
+          marginBottom: "0px",
+        },
       },
     },
   },

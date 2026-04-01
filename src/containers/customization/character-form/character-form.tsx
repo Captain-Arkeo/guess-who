@@ -1,5 +1,5 @@
 "use client";
-import { TextInput } from "@/src/components";
+import { Button, TextInput } from "@/src/components";
 import { useState } from "react";
 import {
   CharacterFormStyled,
@@ -17,7 +17,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
   const [charName, setCharName] = useState("");
   const [charImg, setCharImg] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) : void {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     //Don't reload the page
     e.preventDefault();
 
@@ -25,7 +25,12 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
     const emptyStrings: boolean = charImg === "" && charName === "";
 
     if (onFormSubmit && !emptyStrings) {
-      onFormSubmit([{name: charName !== "" ? charName : undefined, imageUrl: charImg !== "" ? charImg : undefined}]);
+      onFormSubmit([
+        {
+          name: charName !== "" ? charName : undefined,
+          imageUrl: charImg !== "" ? charImg : undefined,
+        },
+      ]);
 
       //Reset user input so adding the next one is easier, and to prevent double click mishaps
       setCharImg("");
@@ -34,7 +39,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
   }
 
   return (
-    <CharacterFormWrapperStyled title="ADD BY HAND">
+    <CharacterFormWrapperStyled title="ADD BY HAND" stackedUnderOtherElement={true}>
       <CharacterFormStyled onSubmit={(e) => handleSubmit(e)}>
         <TextInput
           label="Character Name"
@@ -48,7 +53,7 @@ export const CharacterForm: React.FC<CharacterFormProps> = ({
           value={charImg}
           onChange={(e) => setCharImg(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <Button type="submit" label="Submit" />
       </CharacterFormStyled>
     </CharacterFormWrapperStyled>
   );
