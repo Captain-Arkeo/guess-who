@@ -3,6 +3,6 @@ import { styled } from "@/styled-system/jsx";
 
 export const MiscellaneousChoicesWrapperStyled = styled(CustomizationElement, {
   base: {
-    gap: "10px",
+    gap: "15px",
   },
 });
