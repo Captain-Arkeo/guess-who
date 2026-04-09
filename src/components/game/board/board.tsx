@@ -1,7 +1,7 @@
 "use client";
 import { Character, Players } from "@/src/types";
 import { BoardStyled, CardLineStyled } from "./board-style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { splitIntoRows } from "@/src/utils";
 import { Card } from "./card";
 
@@ -22,6 +22,12 @@ export const Board: React.FC<BoardProps> = ({
     Array(nbRows * nbColumns).fill(false),
   );
 
+  //Whenever the number of rows or columns changes, reset the flipped cards.
+  //Needed to fix a bug where cards can't be flipped
+  useEffect(() => {
+    setFlippedCards(Array(nbRows * nbColumns).fill(false));
+  }, [nbRows, nbColumns]);
+
   const characterRows: Character[][] = splitIntoRows(characters, nbRows);
 
   function handleCardClick(flipIndex: number) {
@@ -31,7 +37,6 @@ export const Board: React.FC<BoardProps> = ({
         updatedFlippedCards[index] = !isFlipped;
       }
     });
-    console.log(flipIndex + " was touched");
     setFlippedCards(updatedFlippedCards);
   }
 
